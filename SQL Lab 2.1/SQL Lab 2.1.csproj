@@ -54,9 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientComment.cs" />
     <Compile Include="DepartmentDbContext.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="Industry.cs" />
+    <Compile Include="IndustryComment.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectComment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
