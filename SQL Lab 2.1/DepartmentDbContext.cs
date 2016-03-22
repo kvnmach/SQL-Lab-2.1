@@ -29,6 +29,13 @@ namespace SQL_Lab_2._1
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime StartDate { get; set; }
+
+        public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
+        public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+        public virtual ICollection<TimeEntry> TimeEntries { get; set; } = new List<TimeEntry>();
+        public virtual ICollection<ClientComment> ClientComments { get; set; } = new List<ClientComment>();
+        public virtual ICollection<ProjectComment> ProjectComments { get; set; } = new List<ProjectComment>();
+        public virtual ICollection<IndustryComment> IndustryComments { get; set; } = new List<IndustryComment>();
     }
 
 

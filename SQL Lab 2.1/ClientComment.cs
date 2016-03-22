@@ -11,7 +11,7 @@ namespace SQL_Lab_2._1
         public int Id { get; set; }
         public string Comment { get; set; }
 
-        public virtual Client Client { get; set; } = new Client();
-        public virtual Developer Developer { get; set; } = new Developer();
+        public virtual Client Clients { get; set; } = new Client();
+        public virtual Developer Developers { get; set; } = new Developer();
     }
 }
