@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SQL_Lab_2._1
 {
     using System;
@@ -21,6 +23,11 @@ namespace SQL_Lab_2._1
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         public virtual DbSet<Developer> Developers { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Industry> Industries { get; set; }
+        public virtual DbSet<TimeEntry> TimeEntries { get; set; }
     }
 
     public class Developer
@@ -30,12 +37,7 @@ namespace SQL_Lab_2._1
         public string Email { get; set; }
         public DateTime StartDate { get; set; }
 
-        public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
-        public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
-        public virtual ICollection<TimeEntry> TimeEntries { get; set; } = new List<TimeEntry>();
-        public virtual ICollection<ClientComment> ClientComments { get; set; } = new List<ClientComment>();
-        public virtual ICollection<ProjectComment> ProjectComments { get; set; } = new List<ProjectComment>();
-        public virtual ICollection<IndustryComment> IndustryComments { get; set; } = new List<IndustryComment>();
+        public virtual ICollection<Client> Clients { get; set; } = new List<Client>(); 
     }
 
 
