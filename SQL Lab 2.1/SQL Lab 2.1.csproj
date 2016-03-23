@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Build.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientComment.cs" />
     <Compile Include="DepartmentDbContext.cs" />
