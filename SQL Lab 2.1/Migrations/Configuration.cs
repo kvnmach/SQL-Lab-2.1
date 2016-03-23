@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity.Migrations;
+using System.Threading.Tasks;
 
 namespace SQL_Lab_2._1.Migrations
 {
@@ -98,8 +99,69 @@ namespace SQL_Lab_2._1.Migrations
 
             var time1 = new TimeEntry()
             {
-                Date = new DateTime()
+                Date = new DateTime(1000, 12, 01),
+                TimeSpent = 1.0f,
+                Developer = seth,
+                Task = new Task()
+                {
+                    Name = "1",
+                    Project = firstproj
+                }
+
+            };
+
+            var time2 = new TimeEntry()
+            {
+                Date = new DateTime(2000, 12, 01),
+                TimeSpent = 2.0f,
+                Developer = katy,
+                Task = new Task()
+                {
+                    Name = "2",
+                    Project = firstproj
+                }
+
+            };
+
+            var time3 = new TimeEntry()
+            {
+                Date = new DateTime(1000, 12, 01),
+                TimeSpent = 1.0f,
+                Developer = seth,
+                Task = new Task()
+                {
+                    Name = "1",
+                    Project = firstproj
+                }
+
+            };
+
+            var time1 = new TimeEntry()
+            {
+                Date = new DateTime(1000, 12, 01),
+                TimeSpent = 1.0f,
+                Developer = seth,
+                Task = new Task()
+                {
+                    Name = "1",
+                    Project = firstproj
+                }
+
+            };
+
+            var time1 = new TimeEntry()
+            {
+                Date = new DateTime(1000, 12, 01),
+                TimeSpent = 1.0f,
+                Developer = seth,
+                Task = new Task()
+                {
+                    Name = "1",
+                    Project = firstproj
+                }
+
             };
         }
+
     }
 }
