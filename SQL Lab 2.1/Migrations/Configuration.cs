@@ -66,7 +66,23 @@ namespace SQL_Lab_2._1.Migrations
 
             context.Groups.AddOrUpdate(g=> g.Name, bee, fee);
 
-            var client = new Client() {Name = "TIY"};
+            var client1 = new Client() {Name = "TIY"};
+
+            var firstproj = new Project()
+            {
+                Name = "Sql Lab",
+                Client = client1,
+                Developers = {kevin, teee}
+            };
+                context.Projects.AddOrUpdate(p=> p.Name, firstproj);
+
+            var secproj = new Project()
+            {
+                Name = "Sql Lab2",
+                Client = client1,
+                Developers = {katy, seth}
+            };
+                context.Projects.AddOrUpdate(p=> p.Name, secproj);
 
 
 

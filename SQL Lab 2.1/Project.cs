@@ -15,7 +15,7 @@ namespace SQL_Lab_2._1
         public virtual Client Client { get; set; }
         public virtual ICollection<ProjectComment> ProjectComments { get; set; } = new List<ProjectComment>();
         public virtual ICollection<TimeEntry> TimeEntries { get; set; } = new List<TimeEntry>(); 
-             
+        public virtual ICollection<Developer> Developers { get; set; } = new List<Developer>(); 
     }
 
 }
