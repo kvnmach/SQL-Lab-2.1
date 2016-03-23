@@ -1,98 +1,105 @@
+using System;
+using System.Data.Entity.Migrations;
+
 namespace SQL_Lab_2._1.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<SQL_Lab_2._1.DepartmentDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DepartmentDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
+
         //make new developers using faker
         //add clients
         //add projects 
         //add industry
         //
-        protected override void Seed(SQL_Lab_2._1.DepartmentDbContext context)
+        protected override void Seed(DepartmentDbContext context)
         {
-
-            var kevin = new Developer()
+            var kevin = new Developer
             {
                 Name = "Kevin Mach",
                 Email = "ABC@gmail.com",
                 StartDate = new DateTime(2000, 03, 30)
             };
 
-            var seth = new Developer()
+            var seth = new Developer
             {
                 Name = "Seth Malloy",
                 Email = "hep@gmail.com",
                 StartDate = new DateTime(2000, 08, 21)
             };
 
-            var katy = new Developer()
+            var katy = new Developer
             {
                 Name = "Katy Sims",
                 Email = "aaa@aol.com",
                 StartDate = new DateTime(2000, 12, 25)
             };
 
-            var teee = new Developer()
+            var teee = new Developer
             {
                 Name = "Jon Doe",
                 Email = "dddd@aol.com",
                 StartDate = new DateTime(2000, 02, 19)
             };
 
-            context.Developers.AddOrUpdate(d => d.Name, kevin );
+            context.Developers.AddOrUpdate(d => d.Name, kevin);
 
-            var bee = new Group()
+            var bee = new Group
             {
                 Name = "BackEnd"
             };
             bee.Developers.Add(kevin);
             bee.Developers.Add(teee);
 
-            var fee = new Group()
+            var fee = new Group
             {
                 Name = "FrontEnd"
             };
             fee.Developers.Add(katy);
             fee.Developers.Add(seth);
 
-            context.Groups.AddOrUpdate(g=> g.Name, bee, fee);
+            context.Groups.AddOrUpdate(g => g.Name, bee, fee);
 
-            var client1 = new Client() {Name = "TIY"};
+            var client1 = new Client {Name = "TIY"};
 
-            var firstproj = new Project()
+            var firstproj = new Project
             {
                 Name = "Sql Lab",
                 Client = client1,
                 Developers = {kevin, teee}
             };
-                context.Projects.AddOrUpdate(p=> p.Name, firstproj);
+            context.Projects.AddOrUpdate(p => p.Name, firstproj);
 
-            var secproj = new Project()
+            var secproj = new Project
             {
                 Name = "Sql Lab2",
                 Client = client1,
                 Developers = {katy, seth}
             };
-                context.Projects.AddOrUpdate(p=> p.Name, secproj);
+            context.Projects.AddOrUpdate(p => p.Name, secproj);
 
 
+            var comment = new IndustryComment
+            {
+                Comment = "Hello World"
+            };
 
+            var industry1 = new Industry
+            {
+                Name = "Cool",
+                IndustryComments = {comment}
+            };
 
+            context.Industries.AddOrUpdate(x => x.Name, industry1);
 
-
-
-
-
-
+            var time1 = new TimeEntry()
+            {
+                Date = new DateTime()
+            };
         }
     }
 }
