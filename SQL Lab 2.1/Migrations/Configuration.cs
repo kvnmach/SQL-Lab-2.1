@@ -1,6 +1,5 @@
 using System;
 using System.Data.Entity.Migrations;
-using System.Threading.Tasks;
 
 namespace SQL_Lab_2._1.Migrations
 {
@@ -97,73 +96,68 @@ namespace SQL_Lab_2._1.Migrations
 
             context.Industries.AddOrUpdate(x => x.Name, industry1);
 
-            var time1 = new TimeEntry()
+            var time1 = new TimeEntry
             {
                 Date = new DateTime(1000, 12, 01),
                 TimeSpent = 1.0f,
                 Developer = seth,
-                Task = new Task()
+                Task = new Task
                 {
                     Name = "1",
                     Project = firstproj
                 }
-
             };
 
-            var time2 = new TimeEntry()
+            var time2 = new TimeEntry
             {
                 Date = new DateTime(2000, 12, 01),
                 TimeSpent = 2.0f,
                 Developer = katy,
-                Task = new Task()
+                Task = new Task
                 {
                     Name = "2",
                     Project = firstproj
                 }
-
             };
 
-            var time3 = new TimeEntry()
+            var time3 = new TimeEntry
             {
                 Date = new DateTime(3000, 12, 01),
                 TimeSpent = 3.0f,
                 Developer = teee,
-                Task = new Task()
+                Task = new Task
                 {
                     Name = "3",
                     Project = firstproj
                 }
-
             };
 
-            var time4 = new TimeEntry()
+            var time4 = new TimeEntry
             {
                 Date = new DateTime(4000, 12, 01),
                 TimeSpent = 4.0f,
                 Developer = seth,
-                Task = new Task()
+                Task = new Task
                 {
                     Name = "1",
                     Project = secproj
                 }
-
             };
 
-            var time5 = new TimeEntry()
+            var time5 = new TimeEntry
             {
                 Date = new DateTime(5000, 12, 01),
                 TimeSpent = 5.0f,
                 Developer = kevin,
-                Task = new Task()
+                Task = new Task
                 {
                     Name = "5",
                     Project = secproj
                 }
-
             };
-
+            context.TimeEntries.AddOrUpdate(c=> c.Date, time1, time2, time3, time4, time5);
             context.Industries.AddOrUpdate(b => b.IndustryComments, industry1);
+            
         }
-
     }
 }
