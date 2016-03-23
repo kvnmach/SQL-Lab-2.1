@@ -10,22 +10,32 @@ namespace SQL_Lab_2._1.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(SQL_Lab_2._1.DepartmentDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var kevin = new Developer()
+            {
+                Name = "Kevin Mach",
+                Email = "ABC@gmail.com",
+                StartDate = new DateTime(2000, 03, 30)
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var seth = new Developer()
+            {
+                Name = "Seth Malloy",
+                Email = "hep@gmail.com",
+                StartDate = new DateTime(2000, 08, 21)
+            };
+
+
+
+
+
+
+
+
         }
     }
 }
