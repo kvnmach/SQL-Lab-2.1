@@ -15,6 +15,7 @@ namespace SQL_Lab_2._1
         public float TimeSpent { get; set; }
         public virtual Task Task { get; set; }
         public virtual Developer Developer { get; set; }
-        public virtual ICollection<Developer> Developers { get; set; } 
+        public virtual ICollection<Developer> Developers { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }  
     }
 }
