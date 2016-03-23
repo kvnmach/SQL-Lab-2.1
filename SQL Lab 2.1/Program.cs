@@ -7,14 +7,14 @@ namespace SQL_Lab_2._1
         private static void Main(string[] args)
         {
             var a = new DepartmentDbContext();
-            char input;
             var allow = true;
-            Console.WriteLine("type '1' '2' '3' or '4' to enter database ");
-
-            input = Console.ReadLine().ToCharArray()[0];
-
+           
             while (allow)
             {
+                Console.WriteLine("type '1' '2' '3' or '4' to enter database ");
+
+                var input = Console.ReadLine().ToCharArray()[0];
+
                 if (input == '1')
                 {
                     foreach (var c in a.Developers)
@@ -57,10 +57,15 @@ namespace SQL_Lab_2._1
                         }
                     }
                 }
-               
-                
+
+                if (input > 5)
+                {
+                    allow = false;
+                }
                 
             Console.ReadLine();
+
+
         }
             
         }
