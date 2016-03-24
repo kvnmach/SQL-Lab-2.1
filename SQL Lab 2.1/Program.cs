@@ -58,12 +58,13 @@ namespace SQL_Lab_2._1
                     }
                 }
 
-                if (input > 5)
+                if (input >= 5)
                 {
                     allow = false;
                 }
                 
             Console.ReadLine();
+
 
 
         }

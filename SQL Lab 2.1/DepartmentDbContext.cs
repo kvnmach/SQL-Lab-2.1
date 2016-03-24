@@ -28,6 +28,8 @@ namespace SQL_Lab_2._1
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Industry> Industries { get; set; }
         public virtual DbSet<TimeEntry> TimeEntries { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
+        
     }
 
     public class Developer
